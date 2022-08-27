@@ -33,6 +33,7 @@ function operate(operator, num1, num2) {
 
 let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
+const clearButton = document.querySelector(".clear-button");
 let display = document.querySelector(".screen-data");
 const equalButton = document.querySelector(".equal-button");
 let input = "";
@@ -75,4 +76,11 @@ equalButton.addEventListener("click", () => {
     if (input && input2) {
         display.textContent = operate(operation, input, input2);
     }
-})
+});
+
+clearButton.addEventListener("click", () => {
+    input = "";
+    input2 = "";
+    operation = "";
+    display.textContent = "";
+});
