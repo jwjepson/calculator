@@ -34,18 +34,19 @@ function operate(operator, num1, num2) {
 let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 let display = document.querySelector(".screen-data");
-let num1;
-let operator = "";
+let input = "";
+let input2 = "";
+let operation = "";
 
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
         if (((display.textContent).length + 1) > 12) {
             display.textContent += "";
         }
-        else if (num1) {
+        else if (input) {
             display.textContent = "";
-            display.textContent += number.textContent;
-
+            input2 += number.textContent;
+            display.textContent = input2;
         }
         else {
             display.textContent += number.textContent;
@@ -55,13 +56,16 @@ numbers.forEach((number) => {
 
 operators.forEach((operator) => {
     operator.addEventListener("click", () => {
-        if (num1) {
-            
-            console.log(operator.value);
-            display.textContent = operate(operator.value, num1, display.textContent);
+        if (input && input2) {
+            console.log(operation, input, input2);
+            display.textContent = operate(operation, input, input2);
+            input = display.textContent;
+            input2 = "";
+            operation = operator.value;
         }
-        num1 = display.textContent;
-        console.log(num1);
+        else {
+            input = display.textContent;
+            operation = operator.value;
+        }
     });
 });
-
