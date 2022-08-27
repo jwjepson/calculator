@@ -23,6 +23,11 @@ let display = document.querySelector(".screen-data");
 
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
-        display.textContent += number.textContent;
+        if (((display.textContent).length + 1) > 14) {
+            display.textContent += "";
+        }
+        else {
+            display.textContent += number.textContent;
+        }
     });
 });
