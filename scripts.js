@@ -72,5 +72,7 @@ operators.forEach((operator) => {
 });
 
 equalButton.addEventListener("click", () => {
-    display.textContent = operate(operation, input, input2);
+    if (input && input2) {
+        display.textContent = operate(operation, input, input2);
+    }
 })
