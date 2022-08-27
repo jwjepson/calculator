@@ -10,7 +10,7 @@ body {
 .calculator {
     display: flex;
     flex-direction: column;
-    height: 450px;
+    height: 480px;
     width: 310px;
     background-color: royalblue;
     border-radius: 1em;
@@ -45,7 +45,12 @@ body {
 
 .buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
+}
+
+.division-button, .multiply-button, .add-button {
+    background-color: orange;
 }
