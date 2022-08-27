@@ -34,6 +34,7 @@ function operate(operator, num1, num2) {
 let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 const clearButton = document.querySelector(".clear-button");
+const negativeButton = document.querySelector(".negative-button");
 let display = document.querySelector(".screen-data");
 const equalButton = document.querySelector(".equal-button");
 let input = "";
@@ -59,7 +60,8 @@ numbers.forEach((number) => {
 operators.forEach((operator) => {
     operator.addEventListener("click", () => {
         if (input && input2) {
-            console.log(operation, input, input2);
+            console.log(input);
+            console.log(input2);
             display.textContent = operate(operation, input, input2);
             input = display.textContent;
             input2 = "";
@@ -84,3 +86,14 @@ clearButton.addEventListener("click", () => {
     operation = "";
     display.textContent = "";
 });
+
+negativeButton.addEventListener("click", () => {
+    if (input2) {
+        input2 = -input2;
+        display.textContent = -display.textContent;
+    }
+    else if (display.textContent) {
+        display.textContent = -display.textContent;
+    }
+});
+
