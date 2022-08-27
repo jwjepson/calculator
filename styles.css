@@ -56,9 +56,14 @@ body {
 }
 
 .division-button, .multiply-button, .add-button, .equal-button {
-    background-color: orange;
+    background-color: #FF8000;
 }
 
 .zero-button {
     width: 125px;
+}
+
+.clear-button, .negative-button, .percent-button {
+    background-color: #4682b4;
+    color: white;
 }
