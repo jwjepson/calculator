@@ -38,9 +38,14 @@ body {
     height: 55px;
     width: 55px;
     background-color: white;
-    margin-left: 12px;
     margin-top: 15px;
     border-radius: 2em;
     border: none;
     font-size: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
