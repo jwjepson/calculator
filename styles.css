@@ -51,6 +51,10 @@ body {
     margin-top: 20px;
 }
 
-.division-button, .multiply-button, .add-button {
+.division-button, .multiply-button, .add-button, .equal-button {
     background-color: orange;
+}
+
+.zero-button {
+    width: 125px;
 }
