@@ -23,7 +23,7 @@ let display = document.querySelector(".screen-data");
 
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
-        if (((display.textContent).length + 1) > 14) {
+        if (((display.textContent).length + 1) > 12) {
             display.textContent += "";
         }
         else {
