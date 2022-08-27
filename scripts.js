@@ -20,6 +20,7 @@ function operate(operator, num1, num2) {
 
 let numbers = document.querySelectorAll(".number");
 let display = document.querySelector(".screen-data");
+let input = "";
 
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
@@ -28,6 +29,7 @@ numbers.forEach((number) => {
         }
         else {
             display.textContent += number.textContent;
+            input += number.textContent;
         }
     });
 });
