@@ -9,7 +9,7 @@ body {
 
 .calculator {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     height: 450px;
     width: 325px;
     background-color: royalblue;
@@ -18,9 +18,10 @@ body {
 
 .screen {
     background-color: white;
+    margin-top: 20px;
+    margin-left: 12px;
     height: 80px;
     width: 300px;
-    margin-top: 20px;
     border-radius: 1em;
     display: flex;
     justify-content: right;
@@ -31,4 +32,13 @@ body {
     margin-right: 20px;
     font-size: 30px;
     font-family: Arial;
+}
+
+.buttons {
+    height: 55px;
+    width: 55px;
+    background-color: white;
+    margin-left: 12px;
+    margin-top: 15px;
+    border-radius: 2em;
 }
