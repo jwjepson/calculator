@@ -55,7 +55,7 @@ body {
     margin-top: 20px;
 }
 
-.division-button, .multiply-button, .add-button, .equal-button {
+.operator, .equal-button {
     background-color: #FF8000;
 }
 
