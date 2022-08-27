@@ -34,6 +34,7 @@ function operate(operator, num1, num2) {
 let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 let display = document.querySelector(".screen-data");
+const equalButton = document.querySelector(".equal-button");
 let input = "";
 let input2 = "";
 let operation = "";
@@ -69,3 +70,7 @@ operators.forEach((operator) => {
         }
     });
 });
+
+equalButton.addEventListener("click", () => {
+    display.textContent = operate(operation, input, input2);
+})
