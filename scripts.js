@@ -35,6 +35,7 @@ let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 const clearButton = document.querySelector(".clear-button");
 const negativeButton = document.querySelector(".negative-button");
+const percentButton = document.querySelector(".percent-button");
 let display = document.querySelector(".screen-data");
 const equalButton = document.querySelector(".equal-button");
 let input = "";
@@ -94,6 +95,17 @@ negativeButton.addEventListener("click", () => {
     }
     else if (display.textContent) {
         display.textContent = -display.textContent;
+    }
+});
+
+percentButton.addEventListener("click", () => {
+    if (input2) {
+        input2 = input2 / 100;
+        display.textContent = display.textContent / 100;
+    }
+    else if (display.textContent) {
+        console.log(display.textContent);
+        display.textContent = display.textContent / 100;
     }
 });
 
