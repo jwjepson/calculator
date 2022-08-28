@@ -53,16 +53,20 @@ let operation = "";
 
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
-        if (((display.textContent).length + 1) > 12) {
-            display.textContent += "";
-        }
         if (input) {
             display.textContent = "";
-            input2 += number.textContent;
-            display.textContent = input2;
+            if (input2.length == 12) {
+                display.textContent = input2;
+            }
+            else {
+                input2 += number.textContent;
+                display.textContent = input2;
+            }
         }
         else {
-            display.textContent += number.textContent;
+            if (display.textContent.length < 12) {
+                display.textContent += number.textContent;
+            }
         }
         if (display.textContent.includes(".")) {
             decimalButton.disabled = true;
