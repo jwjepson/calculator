@@ -64,7 +64,7 @@ operators.forEach((operator) => {
         if (input && input2) {
             console.log(input);
             console.log(input2);
-            display.textContent = operate(operation, input, input2);
+            display.textContent = Math.round(operate(operation, input, input2) * 1000) / 1000;
             input = display.textContent;
             input2 = "";
             operation = operator.value;
@@ -78,7 +78,7 @@ operators.forEach((operator) => {
 
 equalButton.addEventListener("click", () => {
     if (input && input2) {
-        display.textContent = operate(operation, input, input2);
+        display.textContent = Math.round(operate(operation, input, input2) * 1000) / 1000;
     }
 });
 
