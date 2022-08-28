@@ -32,6 +32,13 @@ function operate(operator, num1, num2) {
     }
 }
 
+function checkForError(result) {
+    if (result == "Infinity") {
+        return "Error";
+    }
+    return result;
+}
+
 let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 const clearButton = document.querySelector(".clear-button");
@@ -68,7 +75,7 @@ operators.forEach((operator) => {
         if (input && input2) {
             console.log(input);
             console.log(input2);
-            display.textContent = Math.round(operate(operation, input, input2) * 1000) / 1000;
+            display.textContent = checkForError(Math.round(operate(operation, input, input2) * 1000) / 1000);
             input = display.textContent;
             input2 = "";
             operation = operator.value;
@@ -83,7 +90,7 @@ operators.forEach((operator) => {
 
 equalButton.addEventListener("click", () => {
     if (input && input2) {
-        display.textContent = Math.round(operate(operation, input, input2) * 1000) / 1000;
+        display.textContent = checkForError(Math.round(operate(operation, input, input2) * 1000) / 1000);
     }
 });
 
