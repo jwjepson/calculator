@@ -15,8 +15,9 @@ function divide(num1, num2) {
 }
 
 function operate(operator, num1, num2) {
-    num1 = parseInt(num1);
-    num2 = parseInt(num2);
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+
     if (operator == "add") {
         return add(num1,num2);
     }
@@ -104,8 +105,9 @@ percentButton.addEventListener("click", () => {
         display.textContent = display.textContent / 100;
     }
     else if (display.textContent) {
-        console.log(display.textContent);
         display.textContent = display.textContent / 100;
     }
 });
+
+
 
