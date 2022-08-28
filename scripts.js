@@ -36,6 +36,7 @@ let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 const clearButton = document.querySelector(".clear-button");
 const negativeButton = document.querySelector(".negative-button");
+const decimalButton = document.querySelector(".decimal-button");
 const percentButton = document.querySelector(".percent-button");
 let display = document.querySelector(".screen-data");
 const equalButton = document.querySelector(".equal-button");
@@ -48,13 +49,16 @@ numbers.forEach((number) => {
         if (((display.textContent).length + 1) > 12) {
             display.textContent += "";
         }
-        else if (input) {
+        if (input) {
             display.textContent = "";
             input2 += number.textContent;
             display.textContent = input2;
         }
         else {
             display.textContent += number.textContent;
+        }
+        if (display.textContent.includes(".")) {
+            decimalButton.disabled = true;
         }
     });
 });
@@ -72,6 +76,7 @@ operators.forEach((operator) => {
         else {
             input = display.textContent;
             operation = operator.value;
+            decimalButton.disabled = false;
         }
     });
 });
@@ -87,6 +92,7 @@ clearButton.addEventListener("click", () => {
     input2 = "";
     operation = "";
     display.textContent = "";
+    decimalButton.disabled = false;
 });
 
 negativeButton.addEventListener("click", () => {
