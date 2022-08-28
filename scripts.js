@@ -122,7 +122,13 @@ percentButton.addEventListener("click", () => {
         display.textContent = display.textContent / 100;
     }
     else if (display.textContent) {
-        display.textContent = display.textContent / 100;
+        let percentage = display.textContent / 100;
+        if ((percentage.toString().length - 1) > 12) {
+            display.textContent = percentage.toExponential(1);
+        }
+        else {
+            display.textContent = percentage;
+        }
     }
 });
 
