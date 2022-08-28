@@ -39,6 +39,7 @@ function checkForError(result) {
     return result;
 }
 
+const body = document.querySelector("body");
 let numbers = document.querySelectorAll(".number");
 let operators = document.querySelectorAll(".operator");
 const clearButton = document.querySelector(".clear-button");
@@ -95,6 +96,10 @@ operators.forEach((operator) => {
 equalButton.addEventListener("click", () => {
     if (input && input2) {
         display.textContent = checkForError(Math.round(operate(operation, input, input2) * 1000) / 1000);
+        if ((display.textContent.length - 1) > 12) {
+            let answer = parseFloat(display.textContent);
+            display.textContent = answer.toExponential(1);
+        }
     }
 });
 
@@ -132,5 +137,32 @@ percentButton.addEventListener("click", () => {
     }
 });
 
+body.addEventListener("keydown", (e) => {
+    if (e.key < 10) {
+        display.textContent += e.key;
+        input = display.textContent;
+    }
+    if (e.key == "*") {
+        operation = "multiply";
+    }
+    else if (e.key == "/") {
+        operation = "divide";
+    }
+    else if (e.key == "+") {
+        operation = "add";
+    }
+    else if (e.key == "-") {
+        operation = "subtract";
+    }
+
+    if (input && operation) {
+        display.textContent = "";
+        if (e.key < 10) {
+            display.textContent += e.key;
+            input2 = display.textContent;
+        }
+    }
+    console.log(input, operation);
+});
 
 
