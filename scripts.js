@@ -78,8 +78,6 @@ numbers.forEach((number) => {
 operators.forEach((operator) => {
     operator.addEventListener("click", () => {
         if (input && input2) {
-            console.log(input);
-            console.log(input2);
             display.textContent = checkForError(Math.round(operate(operation, input, input2) * 1000) / 1000);
             input = display.textContent;
             input2 = "";
@@ -136,33 +134,4 @@ percentButton.addEventListener("click", () => {
         }
     }
 });
-
-body.addEventListener("keydown", (e) => {
-    if (e.key < 10) {
-        display.textContent += e.key;
-        input = display.textContent;
-    }
-    if (e.key == "*") {
-        operation = "multiply";
-    }
-    else if (e.key == "/") {
-        operation = "divide";
-    }
-    else if (e.key == "+") {
-        operation = "add";
-    }
-    else if (e.key == "-") {
-        operation = "subtract";
-    }
-
-    if (input && operation) {
-        display.textContent = "";
-        if (e.key < 10) {
-            display.textContent += e.key;
-            input2 = display.textContent;
-        }
-    }
-    console.log(input, operation);
-});
-
 
