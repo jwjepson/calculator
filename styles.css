@@ -75,6 +75,10 @@ footer {
     background-color: #FF8000;
 }
 
+.operator:focus {
+    background-color: #FFAE42;
+}
+
 .zero-button {
     width: 125px;
 }
