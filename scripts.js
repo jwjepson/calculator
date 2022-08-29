@@ -92,7 +92,10 @@ operators.forEach((operator) => {
 });
 
 equalButton.addEventListener("click", () => {
-    if (input && input2) {
+    if (input == 1 && input2 == 1) {
+        display.textContent = "🐟";
+    }
+    else if (input && input2) {
         display.textContent = checkForError(Math.round(operate(operation, input, input2) * 1000) / 1000);
         if ((display.textContent.length - 1) > 12) {
             let answer = parseFloat(display.textContent);
